@@ -50,7 +50,7 @@ function editboot {
         umount /mountesp
         rmdir /mountesp
         exit 1
-    else if [ "$1" == "grub" ]; then
+    elif [ "$1" == "grub" ]; then
         disk=$(blkid | grep -i efi | head -n 1 | cut -d : -f 1)
         mkdir -p /mountesp
         mount $disk /mountesp
